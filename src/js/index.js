@@ -33,10 +33,10 @@ function render(variables = {}) {
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
-          <h1>Lucy Boilett</h1>
-          <h2>Web Developer</h2>
-          <h3>Miami, USA</h3>
-          <ul class="position-right">
+          <h1>${variables.name || "Name"} ${variables.lastname || "Lastname"}</h1>
+          <h2>${variables.role || "Role"}</h2>
+          <h3>${variables.city || "City"}, ${variables.country || "Country"}</h3>
+          <ul ${variables.socialMediaPosition.right} class="${variables.socialMediaPosition}">
             <li><a href="https://twitter.com/alesanchezr"><i class="fa fa-twitter"></i></a></li>
             <li><a href="https://github.com/alesanchezr"><i class="fa fa-github"></i></a></li>
             <li><a href="https://linkedin.com/alesanchezr"><i class="fa fa-linkedin"></i></a></li>
@@ -44,7 +44,7 @@ function render(variables = {}) {
           </ul>
         </div>
     `;
-}
+  
 
 /**
  * Don't change any of the lines below, here is where we do the logic for the dropdowns
